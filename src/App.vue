@@ -1,32 +1,69 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <el-container>
+      <el-header style='height: 108px; padding:0; '>
+        <PageHeader></PageHeader>
+      </el-header>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+      <el-footer style='padding:33px 0 36px; height: 165px; '>
+        <PageFooter></PageFooter>
+      </el-footer>
+    </el-container>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+// @/ 标识 src 目录
+import PageHeader from '@/components/PageHeader.vue';
+import PageFooter from '@/components/PageFooter.vue';
+
+export default {
+  name: 'app',
+  components: { // 注册组件
+    PageHeader,
+    PageFooter,
+  },
+  created() {
+  },
 }
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  opacity: .7;
+  &:hover {
+    opacity: 1;
+  }
+  &.router-link-exact-active {
+    color: #222;
+    opacity: 1;
+  }
+}
+#app {
+  min-width: 1200px;
+  overflow: hidden;
+  .el-header, .el-footer {
+    color: #333;
+    font-size: 14px;
+  }
+  .el-header {
+    background: linear-gradient(180deg, #f5f5f5 33%, #fff 33%);
+  }
+  .el-footer {
+    background: #f5f5f5;
+  }
+  .el-main {
+    padding: 0;
+    min-height: calc(100vh - 436px);
   }
 }
 </style>

@@ -1,0 +1,11 @@
+{
+  "data": {
+    "professionNav": [
+      { "text": "首页", "path": "/profession"},
+      { "text": "企业介绍", "path": "/profession/enterprise" },
+      { "text": "产品介绍", "path": "/profession/product" },
+      { "text": "荣誉资质", "path": "/profession/honor" },
+      { "text": "联系我们", "path": "/profession/contact" }
+    ]
+  }
+}
